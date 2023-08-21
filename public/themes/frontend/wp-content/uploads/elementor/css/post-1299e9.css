@@ -1,0 +1,253 @@
+.elementor-kit-12 {
+  --e-global-color-primary  : #0c0c0f;
+  --e-global-color-secondary : #dee2ff;
+  --e-global-color-text: #101014;
+  --e-global-color-accent: #F9D06C;
+  --e-global-color-bb36c19: #ced4da;
+  --e-global-color-b88848e: #dee2ff;
+  --e-global-color-3a0e5d9: #f2f4ff;
+  --e-global-color-9709138: #f5f4fa;
+  --e-global-color-cd6d1e6: #fff9fd;
+  --e-global-color-9edd108: #8e64ff;
+  --e-global-color-9fbce6a: #e1e1e5;
+  --e-global-color-43b27d0: #8e9aaf;
+  --e-global-color-7e8b7b5: #f2fcfc;
+  --e-global-color-3b85e55: #ffffff;
+  --e-global-color-b48e002: #131515;
+  --e-global-typography-primary-font-family: "Marcellus";
+  --e-global-typography-primary-font-weight: 400;
+  --e-global-typography-secondary-font-family: "Montserrat";
+  --e-global-typography-secondary-font-weight: 400;
+  --e-global-typography-text-font-family: "Montserrat";
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-accent-font-family: "Marcellus";
+  --e-global-typography-accent-font-weight: 400;
+  --e-global-typography-7d94608-font-family: "Marcellus";
+  --e-global-typography-7d94608-font-size: 14px;
+  --e-global-typography-7d94608-text-transform: uppercase;
+  --e-global-typography-7d94608-letter-spacing: 1px;
+  --e-global-typography-85b1b1f-font-family: "Gotham";
+  --e-global-typography-85b1b1f-font-size: 22px;
+  --e-global-typography-85b1b1f-line-height: 1.4em;
+  --e-global-typography-85b1b1f-letter-spacing: 0.5px;
+  --e-global-typography-29cbef3-font-family: "Marcellus";
+  --e-global-typography-29cbef3-font-size: 16px;
+  --e-global-typography-29cbef3-letter-spacing: 0.5px;
+  --e-global-typography-ed09c1b-font-family: "Marcellus";
+  --e-global-typography-ed09c1b-font-size: 14px;
+  --e-global-typography-ed09c1b-text-transform: uppercase;
+  --e-global-typography-ed09c1b-line-height: 1em;
+  --e-global-typography-ed09c1b-letter-spacing: 0.5px;
+  --e-global-typography-70f5705-font-family: "Montserrat";
+  --e-global-typography-70f5705-font-size: 18px;
+  --e-global-typography-70f5705-font-weight: 500;
+  --e-global-typography-70f5705-font-style: italic;
+  --e-global-typography-1b320c8-font-family: "Montserrat";
+  --e-global-typography-1b320c8-font-size: 14px;
+  --e-global-typography-078928f-font-family: "Marcellus";
+  --e-global-typography-078928f-font-size: 22px;
+  --e-global-typography-51a91bc-font-family: "Marcellus";
+  --e-global-typography-51a91bc-font-size: 18px;
+  --e-global-typography-a62dbdc-font-family: "Marcellus";
+  --e-global-typography-a62dbdc-font-size: 20px;
+  --e-global-typography-a62dbdc-letter-spacing: 0.25px;
+  --e-global-typography-419eb73-font-family: "Marcellus";
+  --e-global-typography-419eb73-font-size: 100px;
+  --e-global-typography-419eb73-line-height: 1.3em;
+  font-family: montserrat, Sans-serif;
+  font-size: 16px;
+  line-height: 2em;
+}
+.elementor-kit-12 a {
+  color: var(--e-global-color-accent);
+  text-decoration: none;
+}
+.elementor-kit-12 h1 {
+  font-family: marcellus, Sans-serif;
+  font-size: 48px;
+  line-height: 1.3em;
+}
+.elementor-kit-12 h2 {
+  font-family: marcellus, Sans-serif;
+  font-size: 36px;
+  line-height: 1.4em;
+}
+.elementor-kit-12 h3 {
+  font-family: marcellus, Sans-serif;
+  font-size: 30px;
+  line-height: 1.4em;
+}
+.elementor-kit-12 h4 {
+  font-family: marcellus, Sans-serif;
+  font-size: 24px;
+  line-height: 1.6em;
+}
+.elementor-kit-12 h5 {
+  font-family: marcellus, Sans-serif;
+  font-size: 20px;
+  line-height: 1.6em;
+}
+.elementor-kit-12 h6 {
+  font-family: marcellus, Sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+.elementor-kit-12 button,
+.elementor-kit-12 input[type="button"],
+.elementor-kit-12 input[type="submit"],
+.elementor-kit-12 .elementor-button {
+  font-family: marcellus, Sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: var(--e-global-color-primary);
+  background: linear-gradient(270deg, #F0E0B0 0%, #FFF 100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FCC573;
+  border-radius: 30px 30px 30px 5px;
+  padding: 20px 50px 20px;
+}
+.elementor-kit-12 button:hover,
+.elementor-kit-12 button:focus,
+.elementor-kit-12 input[type="button"]:hover,
+.elementor-kit-12 input[type="button"]:focus,
+.elementor-kit-12 input[type="submit"]:hover,
+.elementor-kit-12 input[type="submit"]:focus,
+.elementor-kit-12 .elementor-button:hover,
+.elementor-kit-12 .elementor-button:focus {
+  color: var(--e-global-color-primary);
+  background: linear-gradient(270deg, #fff 0%, #F0E0B0 100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FCC573;
+  border-radius: 30px 5px 30px 30px;
+}
+.elementor-kit-12 input:not([type="button"]):not([type="submit"]),
+.elementor-kit-12 textarea,
+.elementor-kit-12 .elementor-field-textual {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--e-global-color-secondary);
+  border-radius: 30px 30px 30px 30px;
+  padding: 12px 20px;
+}
+.elementor-kit-12 input:focus:not([type="button"]):not([type="submit"]),
+.elementor-kit-12 textarea:focus,
+.elementor-kit-12 .elementor-field-textual:focus {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--e-global-color-9edd108);
+  border-radius: 30px 30px 30px 30px;
+}
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 1290px;
+}
+.e-con {
+  --container-max-width: 1290px;
+}
+ {
+}
+h1.entry-title {
+  display: var(--page-title-display);
+}
+.elementor-kit-12 e-page-transition {
+  background-color: #ffbc7d;
+}
+.site-header {
+  padding-right: 0;
+  padding-left: 0;
+}
+@media (max-width: 1024px) {
+  .elementor-kit-12 {
+    --e-global-typography-078928f-font-size: 20px;
+    font-size: 14px;
+    line-height: 1.8em;
+  }
+  .elementor-kit-12 h1 {
+    font-size: 40px;
+  }
+  .elementor-kit-12 h2 {
+    font-size: 32px;
+  }
+  .elementor-kit-12 h3 {
+    font-size: 30px;
+  }
+  .elementor-kit-12 h4 {
+    font-size: 24px;
+  }
+  .elementor-kit-12 h5 {
+    font-size: 20px;
+  }
+  .elementor-kit-12 h6 {
+    font-size: 18px;
+  }
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1024px;
+  }
+  .e-con {
+    --container-max-width: 1024px;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-kit-12 {
+    --e-global-typography-70f5705-font-size: 14px;
+    line-height: 1.8em;
+  }
+  .elementor-kit-12 h1 {
+    font-size: 32px;
+  }
+  .elementor-kit-12 h2 {
+    font-size: 30px;
+  }
+  .elementor-kit-12 h3 {
+    font-size: 28px;
+  }
+  .elementor-kit-12 h4 {
+    font-size: 18px;
+  }
+  .elementor-kit-12 h5 {
+    font-size: 18px;
+  }
+  .elementor-kit-12 h6 {
+    font-size: 16px;
+  }
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 767px;
+  }
+  .e-con {
+    --container-max-width: 767px;
+  }
+}
+@font-face {
+  font-family: gotham;
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url(../../2023/02/GothamLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: gotham;
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url(https://arielmedical.gr/wp-content/uploads/2023/02/GothamBook.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: gotham;
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: url(https://arielmedical.gr/wp-content/uploads/2023/02/GothamMedium.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: gotham;
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: url(https://arielmedical.gr/wp-content/uploads/2023/02/GothamBold.ttf)
+    format("truetype");
+}

@@ -17,7 +17,7 @@
             style="background: url('{{ $image }}');
                     background-position: center;
                     background-repeat: no-repeat;
-                    background-size: 100% auto;">
+                    background-size: cover;">
             <div class="e-con-inner">
                 <div class="elementor-element elementor-element-7065d69 elementor-invisible elementor-widget elementor-widget-heading"
                     data-id="7065d69" data-element_type="widget"

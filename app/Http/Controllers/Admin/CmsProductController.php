@@ -136,7 +136,7 @@ class CmsProductController extends Controller
             unset($params['lang']);
         }
 
-        $params['alias'] = Str::slug($params['alias'] ?? $params['title']);
+        $params['alias'] = $params['alias'] != "" ? Str::slug($params['alias']) : $params['title'];
         $params['admin_updated_id'] = Auth::guard('admin')->user()->id;
         $params['json_params']['title'][$lang] = $params['title'];
 
@@ -144,6 +144,7 @@ class CmsProductController extends Controller
         // cập nhật lại arr_insert['json_params'] từ dữ liệu mới và cũ
         if ($cmsProduct->json_params != "") {
             foreach ($cmsProduct->json_params as $key => $val) {
+                if($key == "gallery_image" ){continue;}
                 if (isset($arr_insert['json_params'][$key])) {
                     if ($arr_insert['json_params'][$key] != null) {
                         if (isset($arr_insert['json_params'][$key])) {

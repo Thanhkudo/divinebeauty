@@ -92,11 +92,11 @@
                                     <h5>@lang('Gallery Image')</h5>
                                 </a>
                             </li>
-                            {{-- <li>
+                            <li>
                                 <a href="#tab_3" data-toggle="tab">
                                     <h5>@lang('Related Products')</h5>
                                 </a>
-                            </li> --}}
+                            </li>
                             <button type="submit" class="btn btn-primary btn-sm pull-right">
                                 <i class="fa fa-floppy-o"></i>
                                 @lang('Save')
@@ -147,22 +147,11 @@
                                                 placeholder="@lang('Title')" value="{{ old('title') }}" required>
                                         </div>
                                     </div>
-                                    
-
-                                   
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('Status')</label>
-                                            <div class="form-control">
-                                                <label>
-                                                    <input type="radio" name="status" value="active" checked="">
-                                                    <small>@lang('active')</small>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="status" value="deactive" class="ml-15">
-                                                    <small>@lang('deactive')</small>
-                                                </label>
-                                            </div>
+                                            <label>@lang('Price')</label>
+                                            <input type="number" class="form-control" name="json_params[price]"
+                                                placeholder="@lang('Price')" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -178,6 +167,23 @@
                                                 value="{{ $detail->alias ?? old('alias') }}" />
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>@lang('Status')</label>
+                                            <div class="form-control">
+                                                <label>
+                                                    <input type="radio" name="status" value="active" checked="">
+                                                    <small>@lang('active')</small>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="status" value="deactive" class="ml-15">
+                                                    <small>@lang('deactive')</small>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>@lang('Is featured')</label>
@@ -194,8 +200,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                   
-                                    
+
+
 
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -219,7 +225,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('Image thumb')</label>
+                                            <label>@lang('Image description')</label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <a data-input="image_thumb" data-preview="image_thumb-holder"
@@ -244,16 +250,23 @@
                                                 placeholder="@lang('Order')" value="{{ old('iorder') }}">
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-md-12">
                                         <hr style="border-top: dashed 2px #a94442; margin: 10px 0px;">
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label>@lang('Brief')</label>
+                                            <textarea name="json_params[brief][{{ $lang }}]" class="form-control"
+                                                id="brief_vi">{{ old('json_params[brief][' . $lang . ']') }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label>@lang('Description')</label>
-                                            <textarea name="json_params[brief][{{ $lang != '' ? $lang : $languageDefault->lang_code }}]" class="form-control"
-                                                id="brief_vi">{{ old('json_params[brief][' . $lang != '' ? $lang : $languageDefault->lang_code . ']') }}</textarea>
+                                            <textarea name="json_params[description][{{ $lang }}]" class="form-control"
+                                                id="description_vi">{{ old('json_params[description][' . $lang . ']') }}</textarea>
                                         </div>
                                     </div>
 
@@ -261,7 +274,23 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                                 <label>@lang('Content')</label>
-                                                <textarea name="json_params[content][{{ $lang != '' ? $lang : $languageDefault->lang_code }}]" class="form-control" id="content_vi">{{ old('json_params[content][' . $lang != '' ? $lang : $languageDefault->lang_code . ']') }}</textarea>
+                                                <textarea name="json_params[content][{{ $lang }}]" class="form-control" id="content_vi">{{ old('json_params[content][' . $lang . ']') }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label>@lang('Information')</label>
+                                                <textarea name="json_params[information][{{ $lang }}]" class="form-control" id="information_vi">{{ old('json_params[information][' . $lang . ']') }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label>@lang('How to use')</label>
+                                                <textarea name="json_params[using][{{ $lang }}]" class="form-control" id="using_vi">{{ old('json_params[using][' . $lang . ']') }}</textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -440,7 +469,9 @@
 @section('script')
     <script>
         CKEDITOR.replace('content_vi', ck_options);
-        CKEDITOR.replace('brief_vi', ck_options);
+        CKEDITOR.replace('description_vi', ck_options);
+        CKEDITOR.replace('information_vi', ck_options);
+
 
         $(document).ready(function() {
 
@@ -612,7 +643,7 @@
             });
 
 
-            
+
         });
     </script>
 @endsection

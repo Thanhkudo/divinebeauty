@@ -6,15 +6,15 @@
   <p>@lang('Content appointment'): </p>
 
   <p>
-    <strong>@lang('Fullname')</strong>: {{ $contact->name??"" }}
+    <strong>@lang('Fullname')</strong>: {{ $contact->name }}
   </p>
   <p>
-    <strong>@lang('Email')</strong>: {{ $contact->email??"" }}
+    <strong>@lang('Email')</strong>: {{ $contact->email }}
   </p>
   <p>
-    <strong>@lang('Phone')</strong>: {{ $contact->phone??"" }}
+    <strong>@lang('Phone')</strong>: {{ $contact->phone }}
   </p>
   <p>
-    <strong>@lang('Content note')</strong>: {{ $contact->content??"" }}
+    <strong>@lang('Content note')</strong>: {{ $contact->content }}
   </p>
 @endsection

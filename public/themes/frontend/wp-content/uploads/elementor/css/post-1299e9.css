@@ -2,7 +2,7 @@
   --e-global-color-primary  : #0c0c0f;
   --e-global-color-secondary : #dee2ff;
   --e-global-color-text: #101014;
-  --e-global-color-accent: #F9D06C;
+  --e-global-color-accent: #FFBF00;
   --e-global-color-bb36c19: #ced4da;
   --e-global-color-b88848e: #dee2ff;
   --e-global-color-3a0e5d9: #f2f4ff;
@@ -102,10 +102,10 @@
   text-decoration: none;
   letter-spacing: 0.5px;
   color: var(--e-global-color-primary);
-  background: linear-gradient(270deg, #F0E0B0 0%, #FFF 100%);
+  background: linear-gradient(270deg, #FFBF00 0%, #FFF 100%);
   border-style: solid;
   border-width: 1px;
-  border-color: #FCC573;
+  border-color: #FFBF00;
   border-radius: 30px 30px 30px 5px;
   padding: 20px 50px 20px;
 }
@@ -118,10 +118,10 @@
 .elementor-kit-12 .elementor-button:hover,
 .elementor-kit-12 .elementor-button:focus {
   color: var(--e-global-color-primary);
-  background: linear-gradient(270deg, #fff 0%, #F0E0B0 100%);
+  background: linear-gradient(270deg, #fff 0%, #FFBF00 100%);
   border-style: solid;
   border-width: 1px;
-  border-color: #FCC573;
+  border-color: #FFBF00;
   border-radius: 30px 5px 30px 30px;
 }
 .elementor-kit-12 input:not([type="button"]):not([type="submit"]),

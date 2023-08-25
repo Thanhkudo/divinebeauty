@@ -73,7 +73,7 @@
                 <th>@lang('Is default')</th>
                 <th>@lang('Order')</th>
                 <th>@lang('Updated at')</th>
-                {{-- <th>@lang('Status')</th> --}}
+                <th>@lang('Status')</th>
                 <th>@lang('Action')</th>
               </tr>
             </thead>
@@ -112,10 +112,10 @@
                     <td>
                       {{ $row->updated_at }}
                     </td>
-                    {{-- <td>
-                      @lang($row->status)
-                    </td> --}}
                     <td>
+                      @lang($row->status)
+                    </td>
+                     <td>
                       <a class="btn btn-sm btn-warning" data-toggle="tooltip" title="@lang('Update')"
                         data-original-title="@lang('update')"
                         href="{{ route(Request::segment(2) . '.edit', $row->id) }}">

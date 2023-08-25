@@ -41,6 +41,9 @@
             .elementor-76 .elementor-element.elementor-element-d1088ef .elementor-heading-title {
                 font-size: 28px;
             }
+            .elementor-76 .elementor-element.elementor-element-1b86a4c {
+                --margin-top: -420px;
+            }
         }
     </style>
     <div class="elementor-element elementor-element-8fd194a e-con-boxed e-con lazyloaded " data-id="8fd194a"

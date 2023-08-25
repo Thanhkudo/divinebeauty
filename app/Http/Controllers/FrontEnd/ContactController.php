@@ -76,7 +76,7 @@ class ContactController extends Controller
 
             // send mail
             if (isset($params['email']) && $params['email'] != "") {
-                $email = $params['email'];
+                $email = $this->web_information->information->email;
 
                 // $_ENV['MAIL_USERNAME'] = $this->web_information->information->send_email;
                 // $this->setEnv('MAIL_USERNAME', $this->web_information->information->send_email);

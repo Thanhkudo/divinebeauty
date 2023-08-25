@@ -3,7 +3,7 @@
 @php
     $page_title = $taxonomy->json_params->title->{$locale} ?? ($taxonomy->title ?? ($page->title ?? $page->name));
     $image_background = $taxonomy->json_params->image_background ?? ($web_information->image->background_breadcrumbs ?? '');
-    
+
     $title = $taxonomy->json_params->title->{$locale} ?? ($taxonomy->title ?? null);
     $brief = $taxonomy->json_params->brief->{$locale} ?? ($taxonomy->brief ?? null);
     $content = $taxonomy->json_params->content->{$locale} ?? ($taxonomy->content ?? null);
@@ -14,7 +14,7 @@
     $seo_keyword = $taxonomy->json_params->seo_keyword ?? null;
     $seo_description = $taxonomy->json_params->seo_description ?? null;
     $seo_image = $image ?? null;
-    
+
     if (isset($list_taxonomy)) {
         $taxonomy_parent = $list_taxonomy->first(function ($item, $key) use ($taxonomy) {
             return $item->id == $taxonomy->parent_id;
@@ -81,7 +81,7 @@
             }
         }
 
-       
+
 
         .elementor-883 .elementor-element.elementor-element-8174a2e img {
             width: 100%;
@@ -99,7 +99,7 @@
         }
 
 
-    
+
         .elementor_taxonomy .elementor-883 .elementor-element.elementor-element-8174a2e img {
             width: 100%;
             height: auto;
@@ -166,13 +166,33 @@
             max-width: 368px;
 
         }
-        .page-content a.link_title{
+
+        .page-content a.link_title {
             text-decoration: none;
             color: #000;
         }
-        .page-content a.link_title:hover{
-           
-            color: var(--e-global-color-accent );
+
+        .page-content a.link_title:hover {
+
+            color: var(--e-global-color-accent);
+        }
+
+        .price {
+            font-family: var(--e-global-typography-text-font-family), Sans-serif;
+            color: #000;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28px;
+        }
+
+        .price_old {
+            font-family: var(--e-global-typography-text-font-family), Sans-serif;
+            color: #4D4D4D;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 28px;
+            text-decoration: line-through;
+            margin-left: 5px
         }
     </style>
 @endpush
@@ -242,19 +262,19 @@
                                 </p>
                             </div>
                         </div>
-                        @if (isset($list_post) && count($list_post) > 0 )
-                        <div
-                            class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-                            <a href="#list-post"><button type="submit" class="elementor-button elementor-size-md">
-                                    <span>
-                                        <span class="elementor-align-icon-left elementor-button-icon">
-                                            <i aria-hidden="true" class="mdi mdi-message-text-outline"></i>
+                        @if (isset($list_post) && count($list_post) > 0)
+                            <div
+                                class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+                                <a href="#list-post"><button type="submit" class="elementor-button elementor-size-md">
+                                        <span>
+                                            <span class="elementor-align-icon-left elementor-button-icon">
+                                                <i aria-hidden="true" class="mdi mdi-message-text-outline"></i>
+                                            </span>
+                                            <span class="elementor-button-text">@lang('View All Product')</span>
                                         </span>
-                                        <span class="elementor-button-text">@lang('View All Product')</span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                                    </button>
+                                </a>
+                            </div>
                         @endif
                     </div>
                 </div>
@@ -280,7 +300,7 @@
             </div>
         </div>
 
-        @if (isset($list_post) && count($list_post) > 0 )
+        @if (isset($list_post) && count($list_post) > 0)
             <div class="elementor-element elementor-element-a4b0e69 e-con-boxed e-con" data-id="a4b0e69" id="list-post"
                 data-element_type="container" data-settings='{"content_width":"boxed"}'>
                 <div class="e-con-inner">
@@ -309,8 +329,8 @@
                                                 $title_post = $item_post->json_params->title->{$locale} ?? $item_post->title;
                                                 $brief_post = $item_post->json_params->brief->{$locale} ?? $item_post->brief;
                                                 $content_post = $item_post->json_params->content->{$locale} ?? $item_post->content;
-                                                $image_post = $item_post->image_thumb != '' ? $item_post->image_thumb : ($item_post->image != '' ? $item_post->image : null);
-                                                // $date = date('H:i d/m/Y', strtotime($item_post->created_at));
+                                                $image_post = $item_post->image != '' ? $item_post->image : null;
+                                                $price = $item_post->json_params->price ?? null;
                                                 $date = date('d', strtotime($item_post->created_at));
                                                 $month = date('M', strtotime($item_post->created_at));
                                                 $year = date('Y', strtotime($item_post->created_at));
@@ -330,11 +350,13 @@
                                                             <div class="elementor-element elementor-element-8174a2e elementor-widget elementor-widget-image"
                                                                 data-id="8174a2e" data-element_type="widget"
                                                                 data-widget_type="image.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <img src="{{ $image_post }}"
-                                                                        title="{{ $title_post }}"
-                                                                        alt="{{ $title_post }}" loading="lazy" />
-                                                                </div>
+                                                                <a href="{{ $alias_post }}">
+                                                                    <div class="elementor-widget-container">
+                                                                        <img src="{{ $image_post }}"
+                                                                            title="{{ $title_post }}"
+                                                                            alt="{{ $title_post }}" loading="lazy" />
+                                                                    </div>
+                                                                </a>
                                                             </div>
                                                             <div class="elementor-element elementor-element-83bd34 e-con-full e-con"
                                                                 data-id="83bd34a" data-element_type="container"
@@ -344,18 +366,29 @@
                                                                     data-widget_type="jet-listing-dynamic-field.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="title_taxonomy">
-                                                                            {{ $item_post->taxonomy_title }}</div>
+                                                                            {{ $item_post->taxonomy_title }}
+                                                                        </div>
                                                                         <div
                                                                             class="jet-listing jet-listing-dynamic-field display-inline">
 
-                                                                            <div
-                                                                                class="jet-listing-dynamic-field__inline-wrap">
-                                                                                <h3
-                                                                                    class="jet-listing-dynamic-field__content">
-                                                                                    {{ $title_post }}
-                                                                                </h3>
-                                                                            </div>
+                                                                            <a href="{{ $alias_post }}" class="link_title">
+                                                                                <div
+                                                                                    class="jet-listing-dynamic-field__inline-wrap">
+                                                                                    <h3
+                                                                                        class="jet-listing-dynamic-field__content">
+                                                                                        {{ $title_post }}
+                                                                                    </h3>
+                                                                                </div>
+                                                                            </a>
                                                                         </div>
+                                                                        @if ($price)
+                                                                            <div class="title_taxonomy price">
+                                                                                {{ number_format($price, '0', '', '.') }}
+                                                                                {{ App\Consts::CURRENCY_UNIT['vi'] }}
+                                                                            </div>
+                                                                        @endif
+
+
                                                                     </div>
                                                                 </div>
                                                                 <div class="elementor-element elementor-element-57ddac1 elementor-widget elementor-widget-jet-listing-dynamic-field"
@@ -468,18 +501,18 @@
                                                                     data-id="dd25944" data-element_type="widget"
                                                                     data-widget_type="jet-listing-dynamic-field.default">
                                                                     <a href="{{ $alias_child }}" class="link_title">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div
-                                                                            class="jet-listing jet-listing-dynamic-field display-inline">
+                                                                        <div class="elementor-widget-container">
                                                                             <div
-                                                                                class="jet-listing-dynamic-field__inline-wrap">
-                                                                                <h3
-                                                                                    class="jet-listing-dynamic-field__content">
-                                                                                    {{ $title_child }}
-                                                                                </h3>
+                                                                                class="jet-listing jet-listing-dynamic-field display-inline">
+                                                                                <div
+                                                                                    class="jet-listing-dynamic-field__inline-wrap">
+                                                                                    <h3
+                                                                                        class="jet-listing-dynamic-field__content">
+                                                                                        {{ $title_child }}
+                                                                                    </h3>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
                                                                     </a>
                                                                 </div>
 

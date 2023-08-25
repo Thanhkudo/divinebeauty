@@ -161,8 +161,8 @@
                 <th>@lang('Link')</th>
                 <th>@lang('Url Mapping')</th>
                 <th>@lang('Product category')</th>
-                {{-- <th>@lang('Price')</th> --}}
-                <th>@lang('Is featured')</th>
+                <th>@lang('Price')</th>
+                {{-- <th>@lang('Is featured')</th> --}}
                 <th>@lang('Order')</th>
                 <th>@lang('Updated at')</th>
                 <th>@lang('Status')</th>
@@ -183,26 +183,26 @@
                         $url_mapping = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $row->alias ?? $row->title, $row->id, 'detail', $row->taxonomy_title);
                       @endphp
                       <td>
-                        {{-- <a target="_new" href="{{ $url_mapping }}" data-toggle="tooltip" title="@lang('Link')"
+                        <a target="_new" href="{{ $url_mapping }}" data-toggle="tooltip" title="@lang('Link')"
                           data-original-title="@lang('Link')">
                           <span class="btn btn-flat btn-sm btn-info">
                             <i class="fa fa-external-link"></i>
                           </span>
-                        </a> --}}
+                        </a>
                       </td>
                       <td>
-                        {{-- {{ $url_mapping }} --}}
+                        {{ $url_mapping }}
                       </td>
                       <td>
                         {{ $row->taxonomy_title }}
                       </td>
-                      {{-- <td>
+                      <td>
                         {{ number_format($row->json_params->price ?? 0) }}
                         {{ $row->json_params->price_currency ?? '' }}
-                      </td> --}}
-                      <td>
-                        @lang($booleans[$row->is_featured])
                       </td>
+                      {{-- <td>
+                        @lang($booleans[$row->is_featured])
+                      </td> --}}
                       <td>
                         {{ $row->iorder }}
                       </td>

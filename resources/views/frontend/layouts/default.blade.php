@@ -18,7 +18,7 @@
     <meta name="description" content="{{ $seo_description }}" />
     <meta name="keywords" content="{{ $seo_keyword }}" />
     <meta name="news_keywords" content="{{ $seo_keyword }}" />
-    <meta property="og:image" content="{{ $seo_image }}" />
+    <meta property="og:image" content="{{ url('/') . $seo_image }}" />
     <meta property="og:title" content="{{ $seo_title }}" />
     <meta property="og:description" content="{{ $seo_description }}" />
     <meta property="og:url" content="{{ Request::fullUrl() }}" />

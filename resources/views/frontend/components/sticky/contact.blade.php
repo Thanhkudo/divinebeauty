@@ -172,7 +172,7 @@
     <div id="phone-vr" class="button-contact">
       <div class="phone-vr">
         <div class="phone-vr-img-circle">
-          <a href="{{ $web_information->social->messenger }}">
+          <a href="{{ $web_information->social->messenger }}" target="_blank">
             <img src="{{ asset('images/message.png') }}" alt="messenger" />
           </a>
         </div>

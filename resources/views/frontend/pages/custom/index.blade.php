@@ -18,9 +18,7 @@
             data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;content_width&quot;:&quot;boxed&quot;,&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}"
             data-e-bg-lazyload=""
             style="background: url('{{ $image }}');
-              background-position: center center;
-                    background-repeat: repeat;
-                    background-size: 100% auto;">
+              background-position: center center;background-repeat: no-repeat; background-size: cover;">
             <div class="e-con-inner">
                 <div class="elementor-element elementor-element-7065d69 elementor-invisible elementor-widget elementor-widget-heading"
                     data-id="7065d69" data-element_type="widget"

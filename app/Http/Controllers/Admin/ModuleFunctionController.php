@@ -56,7 +56,7 @@ class ModuleFunctionController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'function_code' => 'required|unique:tb_module_functions|max:255',
+            'function_code' => 'required|unique:tb_module_functions,function_code|max:255',
             'module_id' => 'required',
         ]);
         $params = $request->all();

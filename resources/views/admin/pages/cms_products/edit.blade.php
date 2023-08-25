@@ -88,16 +88,16 @@
                                     <h5>Thông tin chính <span class="text-danger">*</span></h5>
                                 </a>
                             </li>
-                            {{-- <li>
+                            <li>
                                 <a href="#tab_2" data-toggle="tab">
                                     <h5>@lang('Gallery Image')</h5>
                                 </a>
-                            </li> --}}
-                            {{-- <li>
+                            </li>
+                            <li>
                                 <a href="#tab_3" data-toggle="tab">
                                     <h5>@lang('Related Products')</h5>
                                 </a>
-                            </li> --}}
+                            </li>
                             <button type="submit" class="btn btn-primary btn-sm pull-right">
                                 <i class="fa fa-floppy-o"></i>
                                 @lang('Save')
@@ -150,9 +150,28 @@
                                         </div>
                                     </div>
 
-                                   
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>@lang('Price')</label>
+                                            <input type="number" class="form-control" name="json_params[price]"
+                                                placeholder="@lang('Price')" value="{{ $detail->json_params->price??'' }}">
+                                        </div>
+                                    </div>
 
-                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>URL tùy chọn</label>
+                                            <i class="fa fa-coffee text-red" aria-hidden="true"></i>
+                                            <small class="form-text">
+                                                (
+                                                <i class="fa fa-info-circle"></i>
+                                                Maximum 100 characters in the group: "A-Z", "a-z", "0-9" and "-_" )
+                                            </small>
+                                            <input name="alias" class="form-control"
+                                                value="{{ $detail->alias ?? old('alias') }}" />
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>@lang('Status')</label>
@@ -173,21 +192,9 @@
                                     </div>
 
 
-                                    
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>URL tùy chọn</label>
-                                            <i class="fa fa-coffee text-red" aria-hidden="true"></i>
-                                            <small class="form-text">
-                                                (
-                                                <i class="fa fa-info-circle"></i>
-                                                Maximum 100 characters in the group: "A-Z", "a-z", "0-9" and "-_" )
-                                            </small>
-                                            <input name="alias" class="form-control"
-                                                value="{{ $detail->alias ?? old('alias') }}" />
-                                        </div>
-                                    </div>
-                                    
+
+
+
 
                                     <div class="col-md-6">
 
@@ -207,8 +214,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                 
+
+
 
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -233,7 +240,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>@lang('Image thumb')</label>
+                                            <label>@lang('Image description')</label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <a data-input="image_thumb" data-preview="image_thumb-holder"
@@ -252,7 +259,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                      
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>@lang('Order')</label>
@@ -260,7 +267,7 @@
                                                 placeholder="@lang('Order')" value="{{ $detail->iorder }}">
                                         </div>
                                     </div>
-                                    
+
 
                                     <div class="col-md-12">
                                         <hr style="border-top: dashed 2px #a94442; margin: 10px 0px;">
@@ -268,8 +275,15 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label>@lang('Brief')</label>
+                                            <textarea name="json_params[brief][{{ $lang }}]" class="form-control" id="brief_vi" >{{ isset($detail->json_params->brief->$lang) ? $detail->json_params->brief->$lang : old('json_params[brief][' . $lang . ']') }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label>@lang('Description')</label>
-                                            <textarea name="json_params[brief][{{ $lang != '' ? $lang : $languageDefault->lang_code }}]" class="form-control" id="brief_vi" >{{ isset($detail->json_params->brief->$lang) ? $detail->json_params->brief->$lang : old('json_params[brief][' . $lang != '' ? $lang : $languageDefault->lang_code . ']') }}</textarea>
+                                            <textarea name="json_params[description][{{ $lang }}]" class="form-control" id="description_vi" >{{ isset($detail->json_params->description->$lang) ? $detail->json_params->description->$lang : old('json_params[description][' . $lang . ']') }}</textarea>
                                         </div>
                                     </div>
 
@@ -277,7 +291,23 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                                 <label>@lang('Content')</label>
-                                                <textarea name="json_params[content][{{ $lang != '' ? $lang : $languageDefault->lang_code }}]" class="form-control" id="content_vi">{{ isset($detail->json_params->content->$lang) ? $detail->json_params->content->$lang : old('json_params[content][' . $lang != '' ? $lang : $languageDefault->lang_code . ']') }}</textarea>
+                                                <textarea name="json_params[content][{{ $lang }}]" class="form-control" id="content_vi">{{ isset($detail->json_params->content->$lang) ? $detail->json_params->content->$lang : old('json_params[content][' . $lang . ']') }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label>@lang('Information')</label>
+                                                <textarea name="json_params[information][{{ $lang }}]" class="form-control" id="information_vi">{{ isset($detail->json_params->information->$lang) ? $detail->json_params->information->$lang : old('json_params[information][' . $lang . ']') }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label>@lang('How to use')</label>
+                                                <textarea name="json_params[using][{{ $lang }}]" class="form-control" id="using_vi">{{ isset($detail->json_params->using->$lang) ? $detail->json_params->using->$lang : old('json_params[using][' . $lang . ']') }}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -472,7 +502,9 @@
 @section('script')
     <script>
         CKEDITOR.replace('content_vi', ck_options);
-        CKEDITOR.replace('brief_vi', ck_options);
+        CKEDITOR.replace('description_vi', ck_options);
+        CKEDITOR.replace('information_vi', ck_options);
+        CKEDITOR.replace('using_vi', ck_options);
 
         $(document).ready(function() {
 

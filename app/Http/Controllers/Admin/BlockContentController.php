@@ -159,18 +159,18 @@ class BlockContentController extends Controller
             $lang = $params['lang'];
             unset($params['lang']);
         }
-        
+
 
         $params['admin_updated_id'] = Auth::guard('admin')->user()->id;
         $params['json_params']['title'][$lang] = $request['title']??'';
         $params['json_params']['brief'][$lang] = $request['brief']??"";
         $params['json_params']['content'][$lang] = $request['content']??"";
         $params['json_params']['url_link_title'][$lang] = $request['url_link_title']??"";
-
         $arr_insert = $params;
         // cập nhật lại arr_insert['json_params'] từ dữ liệu mới và cũ
         if ($blockContent->json_params != "") {
             foreach ($blockContent->json_params as $key => $val) {
+                if($key == "gallery_image"){continue;}
                 if (isset($arr_insert['json_params'][$key])) {
                     if ($arr_insert['json_params'][$key] != null) {
                         if (isset($arr_insert['json_params'][$key])) {
@@ -202,7 +202,7 @@ class BlockContentController extends Controller
     public function destroy(BlockContent $blockContent)
     {
         // Update status to delete
-        
+
         $blockContent->status = Consts::STATUS_DELETE;
         $blockContent->save();
 
@@ -273,6 +273,6 @@ class BlockContentController extends Controller
         return $response;
     }
 
-   
-  
+
+
 }

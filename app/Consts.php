@@ -4,7 +4,9 @@ namespace App;
 
 class Consts
 {
-    
+    const CURRENCY_UNIT = [
+        'vi' => 'VNĐ'
+    ];
     // For delete some data
     const STATUS_DELETE = 'delete';
 

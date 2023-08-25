@@ -466,7 +466,7 @@ body.rtl .elementor-98 .elementor-element.elementor-element-3bc1f4b {
   margin: 20px 0px 0px 0px;
 }
 .elementor-98 .elementor-element.elementor-element-0c10b11 .elementor-button {
-  background: linear-gradient(270deg, #F0E0B0 0%, #FFF 100%);
+  background: linear-gradient(270deg, #FFBF00 0%, #FFF 100%);
 }
 .elementor-98
   .elementor-element.elementor-element-0c10b11
@@ -474,7 +474,7 @@ body.rtl .elementor-98 .elementor-element.elementor-element-3bc1f4b {
 .elementor-98
   .elementor-element.elementor-element-0c10b11
   .elementor-button:focus {
-  background: linear-gradient(270deg, #fff 0%, #F0E0B0 100%);
+  background: linear-gradient(270deg, #fff 0%, #FFBF00 100%);
 }
 .elementor-98
   .elementor-element.elementor-element-0c10b11

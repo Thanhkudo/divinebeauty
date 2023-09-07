@@ -76,7 +76,7 @@ class ContactController extends Controller
 
             // send mail
             if (isset($params['email']) && $params['email'] != "") {
-                $email = $this->web_information->information->email;
+                $arr_email = ['Hth11082001@gmail.com', 'guyherzel@gmail.com'];
 
                 // $_ENV['MAIL_USERNAME'] = $this->web_information->information->send_email;
                 // $this->setEnv('MAIL_USERNAME', $this->web_information->information->send_email);
@@ -84,25 +84,25 @@ class ContactController extends Controller
                     'mail.mailers.smtp.username' =>   $this->web_information->information->send_email,
                     'mail.mailers.smtp.password' =>   $this->web_information->information->pass_email,
                 ]);
-              
-
-                Mail::send('frontend.emails.contact', ['contact' => $contact], function ($message) use ($email) {
-                    $message->to($email);
-                    $message->subject(__('You received a new appointment from the system'));
-                });
+                foreach ($arr_email as $email) {
+                    Mail::send('frontend.emails.contact', ['contact' => $contact], function ($message) use ($email) {
+                        $message->to($email);
+                        $message->subject(__('You received a new appointment from the system'));
+                    });
+                }
             }
 
             // call api pancake
             $shop_id = 20035474;
             $key_api = '6ec90ff1adfd4c2b823ae1f0b96b7c05';
-            $apiURL = 'https://pos.pages.fm/api/v1/shops/' . $shop_id . '/crm/Contact/records?api_key='.$key_api;
+            $apiURL = 'https://pos.pages.fm/api/v1/shops/' . $shop_id . '/crm/Contact/records?api_key=' . $key_api;
 
             $curl = curl_init();
             $data = array(
-                'record[Name]' => $params['name']??"",
-                'record[Phone]' => $params['phone']??"",    
-                'record[Email]' => $params['email']??"",
-                'record[Note]' => $params['content']??"",
+                'record[Name]' => $params['name'] ?? "",
+                'record[Phone]' => $params['phone'] ?? "",
+                'record[Email]' => $params['email'] ?? "",
+                'record[Note]' => $params['content'] ?? "",
             );
             curl_setopt($curl, CURLOPT_POST, 1);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);

@@ -466,8 +466,16 @@
 <script
     src="{{ url('themes/frontend/wp-content/plugins/jeg-elementor-kit/assets/js/sweetalert2/sweetalert2.min430c.js') }}?ver=11.6.16"
     id='sweetalert2-js'></script>
-
-
+<script
+    src="{{ url('themes/frontend/wp-content/plugins/elementor/assets/lib/e-gallery/js/e-gallery.min7359.js') }}?ver=1.2.0"
+    id='elementor-gallery-js'></script>
+<script src="{{ url('themes/frontend/wp-content/plugins/elementor-pro/assets/js/gallery.min.js') }}?ver=1.2.0">
+</script>
+<script id='elementor-pro-frontend-js-before'>
+    var ElementorProFrontendConfig = {
+        "urls": {},
+    };
+</script>
 
 <script>
     $(function() {

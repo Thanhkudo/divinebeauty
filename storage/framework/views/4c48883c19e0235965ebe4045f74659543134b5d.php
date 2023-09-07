@@ -230,7 +230,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label><?php echo app('translator')->get('Image thumb'); ?></label>
+                                            <label><?php echo app('translator')->get('Image description'); ?></label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <a data-input="image_thumb" data-preview="image_thumb-holder"
@@ -262,9 +262,16 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label><?php echo app('translator')->get('Brief'); ?></label>
+                                            <textarea name="json_params[brief][<?php echo e($lang); ?>]" class="form-control"
+                                                id="brief_vi"><?php echo e(old('json_params[brief][' . $lang . ']')); ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label><?php echo app('translator')->get('Description'); ?></label>
-                                            <textarea name="json_params[brief][<?php echo e($lang != '' ? $lang : $languageDefault->lang_code); ?>]" class="form-control"
-                                                id="brief_vi"><?php echo e(old('json_params[brief][' . $lang != '' ? $lang : $languageDefault->lang_code . ']')); ?></textarea>
+                                            <textarea name="json_params[description][<?php echo e($lang); ?>]" class="form-control"
+                                                id="description_vi"><?php echo e(old('json_params[description][' . $lang . ']')); ?></textarea>
                                         </div>
                                     </div>
 
@@ -272,7 +279,23 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                                 <label><?php echo app('translator')->get('Content'); ?></label>
-                                                <textarea name="json_params[content][<?php echo e($lang != '' ? $lang : $languageDefault->lang_code); ?>]" class="form-control" id="content_vi"><?php echo e(old('json_params[content][' . $lang != '' ? $lang : $languageDefault->lang_code . ']')); ?></textarea>
+                                                <textarea name="json_params[content][<?php echo e($lang); ?>]" class="form-control" id="content_vi"><?php echo e(old('json_params[content][' . $lang . ']')); ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label><?php echo app('translator')->get('Information'); ?></label>
+                                                <textarea name="json_params[information][<?php echo e($lang); ?>]" class="form-control" id="information_vi"><?php echo e(old('json_params[information][' . $lang . ']')); ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label><?php echo app('translator')->get('How to use'); ?></label>
+                                                <textarea name="json_params[using][<?php echo e($lang); ?>]" class="form-control" id="using_vi"><?php echo e(old('json_params[using][' . $lang . ']')); ?></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -453,7 +476,9 @@
 <?php $__env->startSection('script'); ?>
     <script>
         CKEDITOR.replace('content_vi', ck_options);
-        CKEDITOR.replace('brief_vi', ck_options);
+        CKEDITOR.replace('description_vi', ck_options);
+        CKEDITOR.replace('information_vi', ck_options);
+
 
         $(document).ready(function() {
 

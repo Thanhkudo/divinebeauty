@@ -391,7 +391,7 @@
 
                                                                     </div>
                                                                 </div>
-                                                                <div class="elementor-element elementor-element-57ddac1 elementor-widget elementor-widget-jet-listing-dynamic-field"
+                                                                {{-- <div class="elementor-element elementor-element-57ddac1 elementor-widget elementor-widget-jet-listing-dynamic-field"
                                                                     data-id="57ddac1" data-element_type="widget"
                                                                     data-widget_type="jet-listing-dynamic-field.default">
                                                                     <div class="elementor-widget-container">
@@ -406,12 +406,11 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
+                                                                </div> --}}
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="{{ $alias_post }}"
-                                                        class="jet-engine-listing-overlay-link"></a>
+
                                                 </div>
                                             </div>
                                         @endforeach

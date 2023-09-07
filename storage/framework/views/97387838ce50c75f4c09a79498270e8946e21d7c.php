@@ -398,28 +398,11 @@
 
                                                                     </div>
                                                                 </div>
-                                                                <div class="elementor-element elementor-element-57ddac1 elementor-widget elementor-widget-jet-listing-dynamic-field"
-                                                                    data-id="57ddac1" data-element_type="widget"
-                                                                    data-widget_type="jet-listing-dynamic-field.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div
-                                                                            class="jet-listing jet-listing-dynamic-field display-inline">
-                                                                            <div
-                                                                                class="jet-listing-dynamic-field__inline-wrap">
-                                                                                <p
-                                                                                    class="jet-listing-dynamic-field__content">
-                                                                                    <?php echo Str::limit($brief_post, 50); ?>
-
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="<?php echo e($alias_post); ?>"
-                                                        class="jet-engine-listing-overlay-link"></a>
+
                                                 </div>
                                             </div>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

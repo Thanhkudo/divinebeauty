@@ -26,7 +26,7 @@ class CmsController extends Controller
         $params_page['alias'] = $alias;
         $page = ContentService::getPage($params_page)->first();
         $this->responseData['City'] = Region::DATA;
-        
+
 
         if ($page) {
             if (!$page->is_page) {
@@ -57,7 +57,7 @@ class CmsController extends Controller
                 $paramPost['is_type'] = $taxonomy->taxonomy;
 
                 $this->responseData['posts'] = ContentService::getCmsPost($paramPost)->get();
-                
+
                 if($taxonomy->parent_id == null){
                     return $this->responseView('frontend.pages.' . $taxonomy->taxonomy . '.default');
                 }
@@ -75,14 +75,14 @@ class CmsController extends Controller
     {
         if ($alias != '') {
             $this->responseData['City'] = Region::DATA;
-           
+
 
             $params['alias'] = $alias;
             $params['status'] = Consts::POST_STATUS['active'];
             $detail = ContentService::getCmsPost($params)->first();
             $review = Review::where('status', 'active')->where('id_product',$detail->id)->orderBy("created_at","desc")->get();
 
-            
+
             if ($detail) {
                 $detail->count_visited = $detail->count_visited + 1;
                 $detail->save();
@@ -118,5 +118,5 @@ class CmsController extends Controller
         return redirect()->back()->with('errorMessage', __('not_found'));
     }
 
-  
+
 }

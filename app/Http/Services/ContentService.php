@@ -222,6 +222,72 @@ class ContentService
         return $query;
     }
 
+    public static function getCmsPost_ramdom($params, $isPaginate = false)
+    {
+
+        $query = CmsPost::selectRaw('tb_cms_posts.*, admins.name,tb_cms_taxonomys.title AS taxonomy_title, tb_cms_taxonomys.taxonomy AS taxonomy, tb_cms_taxonomys.json_params AS taxonomy_json_params, tb_cms_taxonomys.alias AS taxonomy_alias')
+            ->Join('tb_cms_taxonomys', 'tb_cms_taxonomys.id', '=', 'tb_cms_posts.taxonomy_id')
+            ->LeftJoin('admins', 'admins.id', '=', 'tb_cms_posts.admin_updated_id')
+
+            ->when(!empty($params['keyword']), function ($query) use ($params) {
+                $keyword = $params['keyword'];
+                return $query->where(function ($where) use ($keyword) {
+                    return $where->where('tb_cms_posts.title', 'like', '%' . $keyword . '%')
+                        ->orWhere('tb_cms_posts.json_params->title->vi', 'like', '%' . $keyword . '%');
+                });
+            })
+            ->when(!empty($params['id']), function ($query) use ($params) {
+                return $query->where('tb_cms_posts.id', $params['id']);
+            })
+            ->when(!empty($params['alias']), function ($query) use ($params) {
+                return $query->where('tb_cms_posts.alias', $params['alias']);
+            })
+            ->when(!empty($params['different_id']), function ($query) use ($params) {
+                return $query->where('tb_cms_posts.id', '!=', $params['different_id']);
+            })
+            ->when(!empty($params['taxonomy_id']), function ($query) use ($params) {
+                if (is_array($params['taxonomy_id'])) {
+                    return $query->whereIn('tb_cms_posts.taxonomy_id', $params['taxonomy_id']);
+                } else {
+                    return $query->where('tb_cms_posts.taxonomy_id', $params['taxonomy_id']);
+                }
+            })
+            ->when(!empty($params['is_featured']), function ($query) use ($params) {
+                return $query->where('tb_cms_posts.is_featured', $params['is_featured']);
+            })
+            ->when(!empty($params['related_post']), function ($query) use ($params) {
+                return $query->whereIn('tb_cms_posts.id', $params['related_post']);
+            })
+            ->when(!empty($params['other_list']), function ($query) use ($params) {
+                return $query->whereNotIn('tb_cms_posts.id', $params['other_list']);
+            })
+            ->when(!empty($params['tags']), function ($query) use ($params) {
+                $query->whereJsonContains('tb_cms_posts.json_params->tags', $params['tags']);
+            });
+
+        if (!empty($params['is_type'])) {
+            $query->where('tb_cms_posts.is_type', $params['is_type']);
+        }
+        if (!empty($params['status'])) {
+            $query->where('tb_cms_posts.status', $params['status']);
+        } else {
+            $query->where('tb_cms_posts.status', "!=", Consts::STATUS_DELETE);
+        }
+
+        // Check with order_by params
+        if (!empty($params['order_by'])) {
+            if (is_array($params['order_by'])) {
+                foreach ($params['order_by'] as $key => $value) {
+                    $query->orderBy('tb_cms_posts.' . $key, $value);
+                }
+            } else {
+                $query->orderByRaw('tb_cms_posts.' . $params['order_by'] . ' desc');
+            }
+        }
+
+        return $query;
+    }
+
     public static function getContact($params)
     {
         $query = Contact::select('tb_contacts.*')

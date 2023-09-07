@@ -19,7 +19,7 @@
     <meta name="description" content="<?php echo e($seo_description); ?>" />
     <meta name="keywords" content="<?php echo e($seo_keyword); ?>" />
     <meta name="news_keywords" content="<?php echo e($seo_keyword); ?>" />
-    <meta property="og:image" content="<?php echo e($seo_image); ?>" />
+    <meta property="og:image" content="<?php echo e(url('/') . $seo_image); ?>" />
     <meta property="og:title" content="<?php echo e($seo_title); ?>" />
     <meta property="og:description" content="<?php echo e($seo_description); ?>" />
     <meta property="og:url" content="<?php echo e(Request::fullUrl()); ?>" />
@@ -33,9 +33,7 @@
     <?php echo $__env->make('frontend.panels.styles', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <?php echo $__env->yieldPushContent('style'); ?>
-    <style>
 
-    </style>
     <?php echo $__env->yieldPushContent('schema'); ?>
 </head>
 

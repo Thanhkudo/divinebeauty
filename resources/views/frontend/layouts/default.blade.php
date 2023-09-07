@@ -32,9 +32,7 @@
     @include('frontend.panels.styles')
     {{-- Styles custom each page --}}
     @stack('style')
-    <style>
 
-    </style>
     @stack('schema')
 </head>
 
